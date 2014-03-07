@@ -1,16 +1,16 @@
 ## grunt-css-sprite
 
-### 这是什么
+### About
 
-这是一个帮助前端开发工程师将css代码中的切片合并成雪碧图的工具；
-其灵感来源 `grunt-sprite`，由于其配置参数限制目录结构等，不能满足通用项目需求，现重新造轮子发布；
-它的主要功能是：
+This tool helps front-end developers to combine images, used in CSS file, into single sprite.
+It is inspired by `grunt-sprite`, without its limitations.
+The following features are supported:
 
-1. 使用二叉树排列算法，对css文件进行处理，收集切片序列，生成雪碧图
-2. 在原css代码中为切片添加`background-position`属性
-3. 生成用于高清设备的高清雪碧图，并在css文件末尾追加媒体查询代码
-4. 在引用雪碧图的位置打上时间戳
-5. 在样式末尾追加时间戳
+1. Binary packing algorithm is used for arrangement of images in a sprite
+2. The original CSS code is processed with adding `background-position` rule
+3. High resolution sprites are generated for HD devices. The corresponding media queries are added to the CSS file
+4. A timestamp is added to the sprite URL referenced from the CSS file.
+5. A timestamp is appended at the end of the CSS file.
 
   
 ### 配置说明
