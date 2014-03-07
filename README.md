@@ -13,41 +13,41 @@ The following features are supported:
 5. A timestamp is appended at the end of the CSS file.
 
   
-### 配置说明
+### Configuration instructions
 
-    // 自动雪碧图
+    // Automatic sprite generation
     sprite: {
         options: {
-            // sprite背景图源文件夹，只有匹配此路径才会处理，默认 images/slice/
+            // source images path. Default: `images/slice`
             imagepath: 'test/slice/',
-            // 雪碧图输出目录，注意，会覆盖之前文件！默认 images/
+            // sprite image output directory. Note taht the file will be overwritten! Default: `images/`
             spritedest: 'test/publish/images/',
-            // 替换后的背景路径，默认 ../images/
+            // Background image path as it will be replaced in the resulting CSS. Default: ../images/
             spritepath: '../images/',
-            // 各图片间间距，如果设置为奇数，会强制+1以保证生成的2x图片为偶数宽高，默认 0
+            // Padding between the images in the sprite, in pixels. Default: 0
             padding: 2,
-            // 是否以时间戳为文件名生成新的雪碧图文件，如果启用请注意清理之前生成的文件，默认不生成新文件
+            // whether to generate new sprite file with timestamp in its file name. Default is false, that means that the old file will be cleaned
             newsprite: false,
-            // 给雪碧图追加时间戳，默认不追加
+            // Append timestamp to sprite URL, referenced from the CSS. Default: false
             spritestamp: true,
-            // 在CSS文件末尾追加时间戳，默认不追加
+            // Append a timestamp in the end of the CSS file. Default: false
             cssstamp: true,
-            // 默认使用二叉树最优排列算法
+            // Alignment algorithm. Default: 'binary-tree'
             algorithm: 'binary-tree',
-            // 默认使用`pngsmith`图像处理引擎
+            // Image processing engine. Default: `pngsmith`
             engine: 'pngsmith'
         },
         autoSprite: {
             files: [{
-                //启用动态扩展
+                //Enable dynamic expansion
                 expand: true,
-                // css文件源的文件夹
+                // CSS source folder
                 cwd: 'test/css/',
-                // 匹配规则
+                // file mask for CSS sources
                 src: '*.css',
-                //导出css和sprite的路径地址
+                //the path where new CSS file and the sprite will be exported
                 dest: 'test/publish/css/',
-                // 导出的css名
+                // new CSS file extension
                 ext: '.sprite.css'
             }]
         }
